@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginCustomer() {
   const [formData, setFormData] = useState({
@@ -7,6 +7,8 @@ export default function LoginCustomer() {
     last_name: "",
     password: "",
   });
+
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -31,6 +33,7 @@ export default function LoginCustomer() {
       if (result.success) {
         alert("Login successful!");
         console.log("Customer ID:", result.customer_id);
+        navigate("/customer-dashboard"); // Navigate to Customer Dashboard
       } else {
         alert(`Login failed: ${result.error || "Invalid credentials"}`);
       }

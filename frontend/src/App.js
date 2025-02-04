@@ -9,6 +9,7 @@ import LoginRestaurant from "./Components/LoginRestaurant";
 import Signup from "./Components/Signup";
 import SignupCustomer from "./Components/SignupCustomer";
 import SignupRestaurant from "./Components/SignupRestaurant";
+import CustomerDashboard from './Components/CustomerDashboard';
 
 
 
@@ -27,6 +28,8 @@ function App() {
           <Route path="signup" element={<Signup />} />
           <Route path="customer" element={<SignupCustomer />} />
           <Route path="restaurant" element={<SignupRestaurant />} />
+          <Route path="customer-dashboard" element={<CustomerDashboard />} />
+          
 
 
 
